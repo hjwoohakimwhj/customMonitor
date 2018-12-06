@@ -1,0 +1,50 @@
+1.general
+nsTypeId:
+Info:
+  vnfNodeId:
+MgmtNode:
+  vnfcNodeId:
+  ip: -->public ip
+VnfcNodes:
+  vnfcNodeId:
+  ip:
++publicIp:
++id:
+MonitorOptions:
+- monitorTargetMME-HSS:
+    format: '{{monitorConfigMME}} + {{monitorConfigHSS}}'
+    parameters:
+    - monitorConfigMME:
+        defaultValue: 'null'
+        function:
+        - type: REST
+          url: monitorConfigMME
+        script:
+          type: create_monitor_item
+          url: http://monitorServer/memory/availableMemory
+        target:
+        - MME-HSS-NODE
+        - MME-NODE
+        valueType: string
+    - monitorConfigHSS:
+        defaultValue: 'null'
+        function:
+        - type: REST
+          url: monitorConfigHSS
+     -+script:
+          type: create_monitor_item
+          url: http://monitorServer/memory/availableMemory
+        target: 
+        - MME-HSS-NODE
+        - HSS-NODE
+        !!!! change to
+        target : vnfcNodeId
+      +updateTime 
+     -+filePath:
+     -+command:
+        valueType: string
+    url: monitorTargetMME-HSS
+    interval:
+    updateTime !!!! remove
+
+2.scaling

@@ -1,0 +1,24 @@
+nsTypeId:
+alarmInfo:
+  SPGW_alarm_1:
+    csarFilePath: Alarms/Artifacts/SPGW_alarm_1/SPGW_alarm_1_pack.tar.gz
+    packType: gzip
+    statFormat: ./SPGW_alarm_1.sh -m {{monitorTargetSPGW}}
+    relPath: /
+    outputEnv: ALARM_RESULT
+    comparison: lt
+    threshold: 50
+    description: SPGW_alarm_1
+    involveMetrics:
+    - monitorTargetSPGW
+  SPGW_alarm_2:
+    csarFilePath: Alarms/Artifacts/SPGW_alarm_2/SPGW_alarm_2_pack.tar.gz
+    packType: gzip
+    statFormat: ./SPGW_alarm_2.sh -m {{monitorTargetSPGW}}
+    relPath: /
+    outputEnv: ALARM_RESULT
+    comparison: gt
+    threshold: 100
+    description: SPGW_alarm_2
+    involveMetrics:
+    - monitorTargetSPGW

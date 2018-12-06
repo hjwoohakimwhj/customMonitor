@@ -1,0 +1,10 @@
+request body:
+{
+	"serverId": "d1cb2c46-ed36-438c-8359-f7661f35577c",
+	"filePath": "/monitorPig.tar",
+	"ip": "192.168.0.121",
+	"monitorTargetId": "mm",
+	"monitorConfigId": "ss",
+	"command": "sh /tmp/monitorPig.sh"
+	"updateTime": ""
+}

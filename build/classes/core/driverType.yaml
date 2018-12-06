@@ -1,0 +1,10 @@
+driverTypes:
+  - driverType: OpenStack
+    monitorType:
+      - key: vmInfo
+        item:
+          - itemName: vmState
+          - itemName: launchTime
+          - itemName: host
+          - itemName: vmId
+          - itemName: powerState
